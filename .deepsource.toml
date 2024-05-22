@@ -113,9 +113,6 @@ name = "gofmt"
 name = "gofumpt"
 
 [[transformers]]
-name = "google-java-format"
-
-[[transformers]]
 name = "standardjs"
 
 [[transformers]]

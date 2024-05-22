@@ -11,7 +11,7 @@ execSync(`rm -rf ${path.join(__dirname, '..', 'dist')}`, { stdio: 'inherit' });
 execSync(`cp -R ${config.appStaticDir} ${path.join(__dirname, '..', 'dist')}`, { stdio: 'inherit' });
 
 // Build the TypeScript code
-execSync(`tsc`, { stdio: 'inherit' });
+execSync("tsc", { stdio: 'inherit' });
 
 // Copy the built TypeScript code to the `dist` directory
 execSync(`cp -R ${path.join(__dirname, '..', 'src')} ${path.join(__dirname, '..', 'dist')}`, { stdio: 'inherit' });
@@ -20,7 +20,7 @@ execSync(`cp -R ${path.join(__dirname, '..', 'src')} ${path.join(__dirname, '..'
 const indexHtml = fs.readFileSync(path.join(__dirname, '..', 'public', 'index.html'), 'utf8');
 const indexHtmlBuilt = indexHtml.replace(
   '<script src="/main.js"></script>',
-  `<script src="/dist/main.js"></script>`
+  '<script src="/dist/main.js"></script>'
 );
 fs.writeFileSync(path.join(__dirname, '..', 'dist', 'index.html'), indexHtmlBuilt);
 

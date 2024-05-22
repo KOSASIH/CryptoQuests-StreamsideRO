@@ -1,6 +1,5 @@
 import json
 
-import requests
 import websockets
 
 # Set up the WebSocket connection to the cryptocurrency API

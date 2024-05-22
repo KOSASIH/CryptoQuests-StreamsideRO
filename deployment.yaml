@@ -13,7 +13,7 @@ spec:
         app: game
     spec:
       containers:
-      - name: game
-        image: <your-docker-image-name>
-        ports:
-        - containerPort: 80
+        - name: game
+          image: <your-docker-image-name>
+          ports:
+            - containerPort: 80

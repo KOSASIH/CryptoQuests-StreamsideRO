@@ -1,9 +1,9 @@
-const { Client } = require('aframe-html-component');
+const { Client } = require('aframe-html-component')
 
-const client = new Client();
+const client = new Client()
 
 client.on('didFinishLaunching', () => {
-  console.log('A-Frame server started');
+  console.log('A-Frame server started')
 
   // Register a new component
   client.registerComponent('my-component', {
@@ -13,7 +13,7 @@ client.on('didFinishLaunching', () => {
 
     init: function () {
       // Define the component's behavior
-      this.el.setAttribute('text', { value: this.data.value });
+      this.el.setAttribute('text', { value: this.data.value })
     }
-  });
-      });
+  })
+})

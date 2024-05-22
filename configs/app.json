@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "CryptoQuestsMobile",
+    "slug": "CryptoQuestsMobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.cryptoquests.mobile"
+    },
+    "android": {
+      "package": "com.cryptoquests.mobile",
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "firebase": {
+      "apiKey": "YOUR_API_KEY",
+      "authDomain": "YOUR_AUTH_DOMAIN",
+      "projectId": "YOUR_PROJECT_ID",
+      "storageBucket": "YOUR_STORAGE_BUCKET",
+      "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
+      "appId": "YOUR_APP_ID"
+    }
+  }
+}

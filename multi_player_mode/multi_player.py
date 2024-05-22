@@ -1,8 +1,6 @@
 import asyncio
 import json
-
-import websockets
-from flask import Flask, jsonify, request
+from flask import Flask, request
 
 # Initialize the Flask app
 app = Flask(__name__)

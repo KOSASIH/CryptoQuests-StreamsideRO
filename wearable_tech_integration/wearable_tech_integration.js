@@ -1,20 +1,20 @@
-const bleno = require('bleno');
+const bleno = require('bleno')
 
-const BlenoPrimaryService = bleno.PrimaryService;
-const Characteristic = bleno.Characteristic;
+const BlenoPrimaryService = bleno.PrimaryService
+const Characteristic = bleno.Characteristic
 
 bleno.on('stateChange', (state) => {
-  console.log(`State change: ${state}`);
+  console.log(`State change: ${state}`)
 
   if (state === 'poweredOn') {
-    bleno.startAdvertising('My Wearable', ['12ab']);
+    bleno.startAdvertising('My Wearable', ['12ab'])
   } else {
-    bleno.stopAdvertising();
+    bleno.stopAdvertising()
   }
-});
+})
 
 bleno.on('advertisingStart', (error) => {
-  console.log(`Advertising start: ${error ? 'error' : 'success'}`);
+  console.log(`Advertising start: ${error ? 'error' : 'success'}`)
 
   if (!error) {
     bleno.setServices([
@@ -27,16 +27,16 @@ bleno.on('advertisingStart', (error) => {
             properties: ['read', 'write', 'notify'],
             onReadRequest: (offset, callback) => {
               // Return the current state of the wearable
-              callback(this.PERMISSION_SUCCESS,  Buffer.alloc('Hello, world!'));
+              callback(this.PERMISSION_SUCCESS, Buffer.alloc('Hello, world!'))
             },
             onWriteRequest: (data, offset, withoutResponse, callback) => {
               // Update the wearable state and send a response
-              console.log(`Received data: ${data.toString()}`);
-              callback(this.PERMISSION_SUCCESS);
+              console.log(`Received data: ${data.toString()}`)
+              callback(this.PERMISSION_SUCCESS)
             }
           })
         ]
       })
-    ]);
+    ])
   }
-});
+})

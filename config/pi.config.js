@@ -1,7 +1,7 @@
-const config = require('../config/app.config');
+const config = require('../config/app.config')
 
-const piServerUrl = `https://api.testnet.minepi.com`;
+const piServerUrl = 'https://api.testnet.minepi.com'
 
 module.exports = {
-  piServerUrl,
-};
+  piServerUrl
+}

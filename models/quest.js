@@ -1,18 +1,18 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const questSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: true
   },
   description: {
     type: String,
-    required: true,
+    required: true
   },
   rewards: {
     type: Array,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 
-module.exports = mongoose.model('Quest', questSchema);
+module.exports = mongoose.model('Quest', questSchema)

@@ -1,14 +1,14 @@
-const { promisify } = require('util');
-const fs = require('fs');
-const csv = require('csvtojson');
-const Plotly = require('plotly.js-basic-dist');
+const { promisify } = require('util')
+const fs = require('fs')
+const csv = require('csvtojson')
+const Plotly = require('plotly.js-basic-dist')
 
 const loadCSV = async (filePath) => {
-  const readFile = promisify(fs.readFile);
-  const data = await readFile(filePath, 'utf8');
-  const jsonData = await csv().fromString(data);
-  return jsonData;
-};
+  const readFile = promisify(fs.readFile)
+  const data = await readFile(filePath, 'utf8')
+  const jsonData = await csv().fromString(data)
+  return jsonData
+}
 
 const createScatterPlot = (data, xField, yField, title, xLabel, yLabel) => {
   const trace = {
@@ -16,52 +16,52 @@ const createScatterPlot = (data, xField, yField, title, xLabel, yLabel) => {
     y: data.map((row) => row[yField]),
     mode: 'markers',
     type: 'scatter',
-    name: 'Data',
-  };
+    name: 'Data'
+  }
 
   const layout = {
-    title: title,
+    title,
     xaxis: {
-      title: xLabel,
+      title: xLabel
     },
     yaxis: {
-      title: yLabel,
-    },
-  };
+      title: yLabel
+    }
+  }
 
   const config = {
-    responsive: true,
-  };
+    responsive: true
+  }
 
-  Plotly.newPlot('plot', [trace], layout, config);
-};
+  Plotly.newPlot('plot', [trace], layout, config)
+}
 
 const createBarChart = (data, field, title, xLabel, yLabel) => {
   const trace = {
     x: data.map((row) => row[field]),
     y: data.map((row) => row.count),
-    type: 'bar',
-  };
+    type: 'bar'
+  }
 
   const layout = {
-    title: title,
+    title,
     xaxis: {
-      title: xLabel,
+      title: xLabel
     },
     yaxis: {
-      title: yLabel,
-    },
-  };
+      title: yLabel
+    }
+  }
 
   const config = {
-    responsive: true,
-  };
+    responsive: true
+  }
 
-  Plotly.newPlot('plot', [trace], layout, config);
-};
+  Plotly.newPlot('plot', [trace], layout, config)
+}
 
 module.exports = {
   loadCSV,
   createScatterPlot,
-  createBarChart,
-};
+  createBarChart
+}

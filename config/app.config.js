@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   appName: 'CryptoQuests-StreamsideRO',
@@ -7,5 +7,5 @@ module.exports = {
   appHost: 'localhost',
   appBaseUrl: `http://${process.env.APP_HOST}:${process.env.APP_PORT}`,
   appStaticDir: path.join(__dirname, '..', 'public'),
-  appLogDir: path.join(__dirname, '..', 'logs'),
-};
+  appLogDir: path.join(__dirname, '..', 'logs')
+}

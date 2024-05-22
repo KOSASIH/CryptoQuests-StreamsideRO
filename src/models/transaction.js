@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db.config');
+const { DataTypes } = require('sequelize')
+const sequelize = require('../config/db.config')
 
 const Transaction = sequelize.define(
   'Transaction',
@@ -7,29 +7,29 @@ const Transaction = sequelize.define(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     playerId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     amount: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     piHash: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     status: {
-     type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'pending',
-    },
+      defaultValue: 'pending'
+    }
   },
   {
-    timestamps: false,
+    timestamps: false
   }
-);
+)
 
-module.exports = Transaction;
+module.exports = Transaction

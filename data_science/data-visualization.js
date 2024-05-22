@@ -1,12 +1,14 @@
-const { chart } = require('highcharts');
+const { chart } = require('highcharts')
 
-function visualizeData(data) {
+function visualizeData (data) {
   chart('container', {
-    series: [{
-      type: 'scatter',
-      data: data
-    }]
-  });
+    series: [
+      {
+        type: 'scatter',
+        data
+      }
+    ]
+  })
 }
 
-module.exports = { visualizeData };
+module.exports = { visualizeData }

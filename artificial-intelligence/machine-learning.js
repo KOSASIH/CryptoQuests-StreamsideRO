@@ -1,38 +1,44 @@
 class MachineLearning {
-  constructor(npcConstructor, trainingData, trainingLabels, learningRate, numIterations) {
-    this.npcConstructor = npcConstructor;
-    this.trainingData = trainingData;
-    this.trainingLabels = trainingLabels;
-    this.learningRate = learningRate;
-    this.numIterations = numIterations;
+  constructor (
+    npcConstructor,
+    trainingData,
+    trainingLabels,
+    learningRate,
+    numIterations
+  ) {
+    this.npcConstructor = npcConstructor
+    this.trainingData = trainingData
+    this.trainingLabels = trainingLabels
+    this.learningRate = learningRate
+    this.numIterations = numIterations
 
-    this.npcs = this.initializeNPCs();
+    this.npcs = this.initializeNPCs()
   }
 
-  initializeNPCs() {
-    let npcs = [];
+  initializeNPCs () {
+    const npcs = []
     for (let i = 0; i < this.trainingData.length; i++) {
-      npcs.push(new this.npcConstructor(this.trainingData[i]));
+      npcs.push(new this.npcConstructor(this.trainingData[i]))
     }
-    return npcs;
+    return npcs
   }
 
-  train() {
+  train () {
     for (let i = 0; i < this.numIterations; i++) {
       for (let j = 0; j < this.trainingData.length; j++) {
-        let npc = this.npcs[j];
-        let error = this.trainingLabels[j] - npc.predict();
-        npc.updateWeights(error, this.trainingData[j], this.learningRate);
+        const npc = this.npcs[j]
+        const error = this.trainingLabels[j] - npc.predict()
+        npc.updateWeights(error, this.trainingData[j], this.learningRate)
       }
     }
   }
 
-  updateNPCs() {
+  updateNPCs () {
     // Update NPCs based on new training data or other factors
   }
 
-  run() {
-    this.train();
-    setInterval(() => this.updateNPCs(), 1000);
+  run () {
+    this.train()
+    setInterval(() => this.updateNPCs(), 1000)
   }
 }

@@ -1,6 +1,6 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require('sequelize')
 
-const config = require('../config/app.config');
+const config = require('../config/app.config')
 
 const sequelize = new Sequelize(
   config.appName,
@@ -8,8 +8,8 @@ const sequelize = new Sequelize(
   config.appDbPassword,
   {
     host: config.appDbHost,
-    dialect: 'postgres',
+    dialect: 'postgres'
   }
-);
+)
 
-module.exports = sequelize;
+module.exports = sequelize

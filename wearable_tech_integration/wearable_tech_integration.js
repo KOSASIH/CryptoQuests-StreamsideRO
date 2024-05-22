@@ -27,7 +27,7 @@ bleno.on('advertisingStart', (error) => {
             properties: ['read', 'write', 'notify'],
             onReadRequest: (offset, callback) => {
               // Return the current state of the wearable
-              callback(this.PERMISSION_SUCCESS, new Buffer('Hello, world!'));
+              callback(this.PERMISSION_SUCCESS,  Buffer.alloc('Hello, world!'));
             },
             onWriteRequest: (data, offset, withoutResponse, callback) => {
               // Update the wearable state and send a response
